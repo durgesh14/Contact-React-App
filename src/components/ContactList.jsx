@@ -15,7 +15,6 @@ const ContactList = () => {
         "https://jsonplaceholder.typicode.com/users"
       );
       setContacts(data);
-      setNextId(Math.max(...data.map((contact) => contact.id)) + 1);
     };
     fetchContacts();
   }, []);
@@ -51,6 +50,7 @@ const ContactList = () => {
           ) : (
             <>
               <span>{contact.name}</span>
+              <span>{contact.phone}</span>
               <button onClick={() => setEditingContactId(contact.id)}>
                 Edit
               </button>

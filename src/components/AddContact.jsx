@@ -3,13 +3,13 @@ import axios from "axios";
 
 const AddContact = ({ onAddContact }) => {
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [phone, setphone] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newContact = {
       name,
-      email,
+      phone,
     };
     const { data } = await axios.post(
       "https://jsonplaceholder.typicode.com/users",
@@ -17,7 +17,7 @@ const AddContact = ({ onAddContact }) => {
     );
     onAddContact(data);
     setName("");
-    setEmail("");
+    setphone("");
   };
 
   return (
@@ -29,10 +29,10 @@ const AddContact = ({ onAddContact }) => {
         onChange={(e) => setName(e.target.value)}
       />
       <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        type="phone"
+        placeholder="phone"
+        value={phone}
+        onChange={(e) => setphone(e.target.value)}
       />
       <button type="submit">Add Contact</button>
     </form>
