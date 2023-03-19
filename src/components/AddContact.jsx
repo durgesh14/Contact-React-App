@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Col, Form, Row, Button, Container } from "react-bootstrap";
 
 const AddContact = ({ onAddContact }) => {
   const [name, setName] = useState("");
@@ -21,21 +22,40 @@ const AddContact = ({ onAddContact }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <input
-        type="phone"
-        placeholder="phone"
-        value={phone}
-        onChange={(e) => setphone(e.target.value)}
-      />
-      <button type="submit">Add Contact</button>
-    </form>
+    <Container>
+      <Row className="justify-content-md-center mb-4">
+        <Col xs={12} md={10}>
+          <Form onSubmit={handleSubmit}>
+            <Row>
+              <Col>
+                <Form.Control
+                  type="text"
+                  placeholder="Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </Col>
+              <Col>
+                <Form.Control
+                  type="phone"
+                  placeholder="phone"
+                  value={phone}
+                  onChange={(e) => setphone(e.target.value)}
+                />
+              </Col>
+
+              <Col>
+                <Container className="d-flex justify-content-end">
+                  <Button variant="dark" type="submit">
+                    Add Contact
+                  </Button>
+                </Container>
+              </Col>
+            </Row>
+          </Form>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

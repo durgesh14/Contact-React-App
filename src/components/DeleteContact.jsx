@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { Button } from "react-bootstrap";
 
 const DeleteContact = ({ contact, onDeleteContact }) => {
   const handleDelete = async () => {
@@ -9,7 +10,11 @@ const DeleteContact = ({ contact, onDeleteContact }) => {
     onDeleteContact(contact);
     console.log("Deleted Contact: - ", contact);
   };
-  return <button onClick={handleDelete}> </button>;
+  return (
+    <Button variant="danger" onClick={handleDelete}>
+      Delete{" "}
+    </Button>
+  );
 };
 
 export default DeleteContact;

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Col, Form, Row, Button, Container } from "react-bootstrap";
 
 const UpdateContact = ({ contact, onUpdateContact }) => {
   const [name, setName] = useState(contact.name);
@@ -29,20 +30,20 @@ const UpdateContact = ({ contact, onUpdateContact }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       {error && <p>{error}</p>}
-      <input
+      <Form.Control
         type="text"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
-      <input
+      <Form.Control
         type="phone"
         value={phone}
         onChange={(e) => setphone(e.target.value)}
       />
       <button type="submit">Update Contact</button>
-    </form>
+    </Form>
   );
 };
 export default UpdateContact;
