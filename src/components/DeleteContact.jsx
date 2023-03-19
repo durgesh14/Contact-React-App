@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { Button } from "react-bootstrap";
+import deleteSvg from "../assets/delete.svg";
 
 const DeleteContact = ({ contact, onDeleteContact }) => {
   const handleDelete = async () => {
@@ -12,7 +13,7 @@ const DeleteContact = ({ contact, onDeleteContact }) => {
   };
   return (
     <Button variant="danger" onClick={handleDelete}>
-      Delete{" "}
+      <img src={deleteSvg} width={"20px"}></img>
     </Button>
   );
 };

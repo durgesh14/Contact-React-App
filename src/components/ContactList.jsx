@@ -7,7 +7,7 @@ import DeleteContact from "./DeleteContact";
 import { Table, Button, Container, Row, Col, Form } from "react-bootstrap";
 import Stack from "react-bootstrap/Stack";
 import "../App.css";
-import editSvg from "./assets/edit.svg";
+import editSvg from "../assets/edit.svg";
 
 const ContactList = () => {
   const [contacts, setContacts] = useState([]);
@@ -119,7 +119,7 @@ const ContactList = () => {
                             variant="primary"
                             onClick={() => startEditing(contact)}
                           >
-                            editSvg
+                            <img src={editSvg} width={"20px"}></img>
                           </Button>
                           <DeleteContact
                             contact={contact}
