@@ -33,6 +33,7 @@ const AddContact = ({ onAddContact }) => {
                   placeholder="Name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                  required={true}
                 />
               </Col>
               <Col>
@@ -41,6 +42,7 @@ const AddContact = ({ onAddContact }) => {
                   placeholder="phone"
                   value={phone}
                   onChange={(e) => setphone(e.target.value)}
+                  required={true}
                 />
               </Col>
 
