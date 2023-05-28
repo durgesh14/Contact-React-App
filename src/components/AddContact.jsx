@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Col, Form, Row, Button, Container } from "react-bootstrap";
 
+// This is a functional component that takes a callback function for adding a contact as a prop.
 const AddContact = ({ onAddContact }) => {
   const [name, setName] = useState("");
   const [phone, setphone] = useState("");
-
+  // This asynchronous function handles form submissions. It creates a new contact object, sends a post request to the API to add the new contact,
+  //calls the callback function to update the state in the parent component, and then clears the form fields.
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newContact = {
@@ -21,6 +23,7 @@ const AddContact = ({ onAddContact }) => {
     setphone("");
   };
 
+  // This is the render method for the AddContact component. It returns a form for adding a new contact.
   return (
     <Container>
       <Row className="justify-content-md-center mb-4">
